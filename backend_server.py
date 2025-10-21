@@ -50,7 +50,7 @@ async def start():
             Select(
                 id="model",
                 label="Model",
-                values=["gpt-4o-mini", "gpt-4o"],
+                values=["gpt-4o", "gpt-4o-mini"],
                 initial_index=0,
                 description="Select the large language model to use.",
             ),
@@ -110,9 +110,12 @@ async def chat(message: cl.Message):
 
     if not new_agent_utterance:
         new_agent_utterance = "I'm sorry, I don't have an answer for that."
+    
+    # Send Wikipedia answer
     message = cl.Message(content=new_agent_utterance)
     await message.send()
 
+    # Send Wikipedia references  
     for ref_id, ref in enumerate(
         dialogue_state.current_turn.filtered_search_results, start=1
     ):
@@ -123,6 +126,62 @@ async def chat(message: cl.Message):
             display="side",
         )
         await m.send(for_id=message.id)
+    
+    # Send Lecture (FAISS) answer if available
+    if dialogue_state.current_turn.faiss_answer:
+        faiss_message = cl.Message(
+            content=dialogue_state.current_turn.faiss_answer,
+            author="VoLL-KI",  
+            metadata={
+                "type": "lecture_answer",
+                "icon": "lecture_icon.png"  # Placeholder icon
+            }
+        )
+        await faiss_message.send()
+        
+        # Send Lecture references with letter citations
+        for ref in dialogue_state.current_turn.faiss_references:
+            # Get language flag emoji
+            lang_flag = "🇩🇪" if ref.get("language") == "de" else "🇬🇧" if ref.get("language") == "en" else "🌐"
+            
+            # Build metadata string
+            meta_parts = []
+            if ref.get("index_name"):
+                meta_parts.append(f"Index: {ref['index_name']}")
+            if ref.get("course_name"):
+                meta_parts.append(ref["course_name"])
+            if ref.get("course_term"):
+                meta_parts.append(ref["course_term"])
+            if ref.get("video_id") is not None:
+                meta_parts.append(f"Video {ref['video_id']}")
+            if ref.get("segment_index") is not None:
+                meta_parts.append(f"Segment {ref['segment_index']}")
+            if ref.get("start_sec") is not None and ref.get("end_sec") is not None:
+                meta_parts.append(f"{ref['start_sec']}-{ref['end_sec']}s")
+            
+            metadata_str = " | ".join(meta_parts)
+            
+            # Build content with both summary and original
+            content_parts = [f"## {lang_flag} [Watch the clip]({ref['url']})"]
+            content_parts.append(f"\n**{metadata_str}**")
+            
+            # Add summary section if available
+            if ref.get("summary"):
+                content_parts.append("\n\n### Summary:")
+                for item in ref.get("summary", []):
+                    content_parts.append(f"- {item}")
+            
+            # Add original text section
+            content_parts.append("\n\n### Original transcript:")
+            content_parts.append(ref.get('original_content', ref.get('content', '')))
+            
+            m = cl.Text(
+                name=f"[{ref['id']}]",  # Letter citation [a], [b], etc.
+                content="\n".join(content_parts),
+                display="side",
+                metadata={"type": "lecture_reference", "language": ref.get("language", "en")}
+            )
+            await m.send(for_id=faiss_message.id)
 
 
 @cl.on_chat_end
@@ -130,5 +189,9 @@ def on_chat_end():
     dialogue_state: DialogueState = cl.user_session.get("dialogue_state")
     dialogue_id: str = cl.user_session.get("dialogue_id")
     chat_profile: str = cl.user_session.get("chat_profile")
-    if dialogue_state and dialogue_state.turns:
+    if (
+        dialogue_state
+        and dialogue_state.turns
+        and CHATBOT_DEFAULT_CONFIG.get("save_dialogue_to_db", False)
+    ):
         save_dialogue_to_db(dialogue_state, dialogue_id, chat_profile)

@@ -1,0 +1,100 @@
+/* Custom styling for Lecture (FAISS) citations */
+
+/* Style letter citations [a], [b], [c] with a different color */
+.lecture-citation {
+    color: #007ACC;  /* Azure blue for lecture citations */
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.lecture-citation:hover {
+    color: #005A9E;  /* Darker blue on hover */
+    text-decoration: underline;
+}
+
+/* Style the lecture answer block */
+.lecture-answer-block {
+    background-color: #F0F8FF;  /* Light blue background */
+    border-left: 4px solid #007ACC;
+    padding: 16px;
+    margin: 16px 0;
+    border-radius: 4px;
+}
+
+.lecture-answer-block .author-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: #007ACC;
+    margin-bottom: 12px;
+}
+
+.lecture-answer-block .author-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Style lecture references in the side panel */
+.lecture-reference {
+    border-left: 3px solid #007ACC;
+    padding-left: 12px;
+    margin: 8px 0;
+}
+
+.lecture-reference .watch-clip-header {
+    color: #007ACC;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.lecture-reference .watch-clip-header:hover {
+    text-decoration: underline;
+}
+
+/* Language flag styling */
+.language-flag {
+    font-size: 1.2em;
+    margin-right: 4px;
+}
+
+.lecture-reference .metadata {
+    color: #666;
+    font-size: 0.9em;
+    font-style: italic;
+    margin: 4px 0;
+}
+
+.lecture-reference .summary-section {
+    margin-top: 12px;
+    padding: 8px;
+    background-color: #F5FAFE;
+    border-radius: 4px;
+}
+
+.lecture-reference .original-text {
+    margin-top: 12px;
+    padding: 8px;
+    background-color: #F8F9FA;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+/* Distinguish Wikipedia citations (numeric) from FAISS (letters) */
+.wikipedia-citation {
+    color: #228B22;  /* Forest green for Wikipedia */
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.wikipedia-citation:hover {
+    color: #006400;  /* Darker green on hover */
+    text-decoration: underline;
+}

@@ -28,6 +28,9 @@ dependencies:
     - pytest-asyncio # pytest plugin that facilitates the testing of async functions
     - langcodes[data] # Language codes library with data extras
     - chainlite==0.2.2 # The interface to various LLM providers. A wrapper around LangChain and LiteLLM
+    - faiss-cpu # FAISS vector similarity search
+    - numpy # Required for FAISS
+    - sentence-transformers # For text embeddings
 
     # For the retrieval server
     - fastapi # Web framework for building APIs based on standard Python type hints

@@ -447,13 +447,13 @@ if __name__ == "__main__":
     parser.add_argument(
         "--num_embedding_workers",
         type=int,
-        default=32,
+        default=8,
         help="The number of processes that send embedding requests to GPU. Using too few will underutilize the GPU, and using too many will add overhead.",
     )
     parser.add_argument(
         "--embedding_batch_size",
         type=int,
-        default=32,
+        default=8,
         help="The size of each request sent to GPU. The actual batch size is `embedding_batch_size * num_embedding_workers`",
     )
     parser.add_argument(

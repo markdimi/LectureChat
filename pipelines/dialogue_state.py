@@ -54,8 +54,15 @@ class DialogueTurn(BaseModel):
     llm_claims: list[str] = []
     llm_claim_search_results: list[QueryResult] = []
     filtered_search_results: list[SearchResultBlock] = []
+    # relevance_scores: list[float] = []  # Added for relevance checking
+    # faiss_results: list[Dict[str, Any]] = []  # Added for FAISS retrieval
+    # comparison_results: list[Dict[str, Any]] = []  # Added for comparison
     draft_stage_output: Optional[str] = None
     agent_utterance: Optional[str] = None
+    # FAISS-specific fields for separate handling in frontend
+    faiss_answer: Optional[str] = None
+    faiss_references: list[dict] = []
+    faiss_json_results: list[dict] = []
 
     # @model_validator(mode="after")
     # def check_claims_and_results_length(cls, values):
@@ -106,6 +113,9 @@ class ChatbotConfig(BaseModel):
     claim_post_reranking_num: int = Field(
         ..., description="Number of evidences to retrieve per claim."
     )
+    faiss_iou_threshold: float = Field(
+        0.5, description="IoU threshold to group FAISS results by timestamp overlap."
+    )
 
 
 class DialogueState(BaseModel):
@@ -129,8 +139,13 @@ class DialogueState(BaseModel):
             "User: " + self.current_turn.user_utterance
         )  # current turn's user utterance
 
-        # remove all citations, otherwise, chatbot might try to recite them
+        # remove all citations (both numeric and letter), otherwise, chatbot might try to recite them
+        # Remove numeric citations [1], [2], etc.
         citations = re.findall(r"\[\d+\]", history)
         for citation in citations:
+            history = history.replace(citation, "")
+        # Remove letter citations [a], [b], etc.
+        letter_citations = re.findall(r"\[[a-z]\]", history)
+        for citation in letter_citations:
             history = history.replace(citation, "")
         return history

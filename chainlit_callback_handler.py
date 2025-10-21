@@ -16,6 +16,7 @@ step_name_mapping = {
     "llm_claim_search_stage": "Search Claims",
     "filter_information_stage": "Filter Information",
     "draft_stage": "Draft",
+    "append_faiss_answers": "Search & Filter Lectures",  # Added for lecture retrieval
     # "refine_stage": "Refine",
 }
 
@@ -141,6 +142,18 @@ class ChainlitCallbackHandler(LangchainCallbackHandler):
                     step_output += f"#### [{ref.full_title}]({ref.url})\n\n**Summary:**\n{summary}\n\n**Full text:**\n\n{ref.content}\n\n"
             elif run.name == "draft_stage":
                 step_output = self.dialogue_state.current_turn.draft_stage_output
+            elif run.name == "append_faiss_answers":
+                # Show lecture retrieval process
+                step_output = ""
+                if self.dialogue_state.current_turn.faiss_answer:
+                    step_output += "### Lecture Answer:\n" + self.dialogue_state.current_turn.faiss_answer + "\n\n"
+                if self.dialogue_state.current_turn.faiss_references:
+                    step_output += "### Lecture References:\n"
+                    for ref in self.dialogue_state.current_turn.faiss_references:
+                        lang_flag = "🇩🇪" if ref.get("language") == "de" else "🇬🇧" if ref.get("language") == "en" else "🌐"
+                        step_output += f"- [{ref['id']}] {lang_flag} {ref.get('index_name', '')} | {ref.get('course_name', '')} | Video {ref.get('video_id', '')} ({ref.get('start_sec', '')}-{ref.get('end_sec', '')}s)\n"
+                if not step_output:
+                    step_output = "_No relevant lecture segments found._"
 
             if step_output:
                 current_step.output = step_output

@@ -73,17 +73,17 @@ wikipedia_corpus = Corpus(
 - [Thai](https://th.wikipedia.org/).""",
     chat_starters=[
         ChatStarter(
-            display_label="Haruki Murakami",
-            chat_message="Tell me about Haruki Murakami.",
-            icon_path="https://upload.wikimedia.org/wikipedia/commons/7/75/HarukiMurakami.png",
+            display_label="Artificial Intelligence",
+            chat_message="Explain Artificial Intelligence.",
+            icon_path="https://upload.wikimedia.org/wikipedia/commons/6/64/Dall-e_3_%28jan_%2724%29_artificial_intelligence_icon.png",
         ),
         ChatStarter(
-            display_label="The Oscars",
-            chat_message="Who won the 2024 Oscar for Best Picture?",
-            icon_path="https://www.paradiseawards.com/mm5/graphics/00000001/3/PA-T38MW.png",
+            display_label="Ethics in AI",
+            chat_message="What are some ethical considerations about AI.",
+            icon_path="https://upload.wikimedia.org/wikipedia/commons/0/05/Head_of_Aristotle.jpg",
         ),
     ],
-    llm_corpus_description="Wikipedia in 25 languages",
+    llm_corpus_description="Wikipedia in 25 Languages",
     overwritten_parameters={
         "engine": "gpt-4o-mini",
         "do_refine": False,
@@ -116,53 +116,53 @@ wikipedia_corpus = Corpus(
 #     },
 # )
 
-the_african_times_corpus = Corpus(
-    name="The African Times",
-    corpus_id="the_african_times",
-    icon_path="/public/img/the_african_times.jpg",
-    human_description_markdown="The African Times was a newspaper published in London during the late 19th century. Its articles primarily consisted of correspondence from the global African diaspora.",
-    chat_starters=[
-        ChatStarter(
-            display_label="Women in West Africa",
-            chat_message="Tell me about the role of women in West Africa in the 1880s.",
-            icon_path="https://upload.wikimedia.org/wikipedia/commons/1/15/Africa-countries-WAFU-UFOA.png",
-        ),
-        ChatStarter(
-            display_label="Steamships",
-            chat_message="What is the history of steamships?",
-            icon_path="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/StateLibQld_1_133053_Agamemnon_%28ship%29.jpg/420px-StateLibQld_1_133053_Agamemnon_%28ship%29.jpg",
-        ),
-    ],
-    llm_corpus_description="The African Times, a newspaper published in the late 19th century by the global African diaspora.",
-    overwritten_parameters={
-        "engine": "gpt-4o-mini",
-        "do_refine": False,
-    },
-)
+# the_african_times_corpus = Corpus(
+#     name="The African Times",
+#     corpus_id="the_african_times",
+#     icon_path="/public/img/the_african_times.jpg",
+#     human_description_markdown="The African Times was a newspaper published in London during the late 19th century. Its articles primarily consisted of correspondence from the global African diaspora.",
+#     chat_starters=[
+#         ChatStarter(
+#             display_label="Women in West Africa",
+#             chat_message="Tell me about the role of women in West Africa in the 1880s.",
+#             icon_path="https://upload.wikimedia.org/wikipedia/commons/1/15/Africa-countries-WAFU-UFOA.png",
+#         ),
+#         ChatStarter(
+#             display_label="Steamships",
+#             chat_message="What is the history of steamships?",
+#             icon_path="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/StateLibQld_1_133053_Agamemnon_%28ship%29.jpg/420px-StateLibQld_1_133053_Agamemnon_%28ship%29.jpg",
+#         ),
+#     ],
+#     llm_corpus_description="The African Times, a newspaper published in the late 19th century by the global African diaspora.",
+#     overwritten_parameters={
+#         "engine": "gpt-4o-mini",
+#         "do_refine": False,
+#     },
+# )
 
-general_history_of_africa_corpus = Corpus(
-    name="General History of Africa",
-    corpus_id="general_history_of_africa_volumes_VI_and_VII",
-    icon_path="/public/img/general_history_of_africa.png",
-    human_description_markdown="""This corpus includes volumes VI and VII of the UNESCO book series "General History of Africa".
-Includes the following two volumes:
-- [General history of Africa, VI: Africa in the nineteenth century until the 1880s](https://unesdoc.unesco.org/ark:/48223/pf0000184295)
-- [General history of Africa, VII: Africa under colonial domination, 1880-1935](https://unesdoc.unesco.org/ark:/48223/pf0000184296)
-""",
-    llm_corpus_description="General History of Africa, volumes VI and VII",
-    chat_starters=[],
-    overwritten_parameters={
-        "engine": "gpt-4o-mini",
-        "do_refine": False,
-    },
-)
+# general_history_of_africa_corpus = Corpus(
+#     name="General History of Africa",
+#     corpus_id="general_history_of_africa_volumes_VI_and_VII",
+#     icon_path="/public/img/general_history_of_africa.png",
+#     human_description_markdown="""This corpus includes volumes VI and VII of the UNESCO book series "General History of Africa".
+# Includes the following two volumes:
+# - [General history of Africa, VI: Africa in the nineteenth century until the 1880s](https://unesdoc.unesco.org/ark:/48223/pf0000184295)
+# - [General history of Africa, VII: Africa under colonial domination, 1880-1935](https://unesdoc.unesco.org/ark:/48223/pf0000184296)
+# """,
+#     llm_corpus_description="General History of Africa, volumes VI and VII",
+#     chat_starters=[],
+#     overwritten_parameters={
+#         "engine": "gpt-4o-mini",
+#         "do_refine": False,
+#     },
+# )
 
 
 all_corpus_objects = [
     wikipedia_corpus,
     # semantic_scholar_corpus,
-    the_african_times_corpus,
-    general_history_of_africa_corpus,
+    # the_african_times_corpus,
+    # general_history_of_africa_corpus,
 ]
 
 # add retriever_endpoint to all corpora

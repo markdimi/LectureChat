@@ -72,7 +72,7 @@ def start_redis(c, redis_port: int = DEFAULT_REDIS_PORT):
 @task(pre=[start_redis, load_api_keys], aliases=["chainlit"])
 def start_backend(c, backend_port=DEFAULT_BACKEND_PORT):
     """Start backend using chainlit"""
-    c.run(f"chainlit run -h --port {backend_port} backend_server.py", pty=True)
+    c.run(f"chainlit run -h --host 0.0.0.0 --port {backend_port} backend_server.py", pty=True)
 
 
 @task(pre=[load_api_keys, start_redis], aliases=["test"])

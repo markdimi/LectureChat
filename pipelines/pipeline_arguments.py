@@ -32,6 +32,7 @@ def add_pipeline_arguments(parser):
         type=str,
         default=None,
         help="The endpoint to send retrieval requests to. Defaults to the one defined in Corpus.",
+
     )
 
     # Retrieval parameters
@@ -46,12 +47,14 @@ def add_pipeline_arguments(parser):
         type=int,
         default=CHATBOT_DEFAULT_CONFIG["query_pre_reranking_num"],
         help="Number of passages to retrieve before reranking. Will have no effect if `do_reranking` is False",
+
     )
     parser.add_argument(
         "--query_post_reranking_num",
         type=int,
         default=CHATBOT_DEFAULT_CONFIG["query_post_reranking_num"],
         help="Number of passages to retrieve when searching for information.",
+
     )
     parser.add_argument(
         "--claim_pre_reranking_num",
@@ -65,6 +68,26 @@ def add_pipeline_arguments(parser):
         default=CHATBOT_DEFAULT_CONFIG["claim_post_reranking_num"],
         help="Number of evidences to retrieve per claim.",
     )
+    
+    # # FAISS configuration
+    # parser.add_argument(
+    #     "--faiss_index_path",
+    #     type=str,
+    #     required=True,
+    #     help="Path to the FAISS index file.",
+    # )
+    # parser.add_argument(
+    #     "--faiss_model_name",
+    #     type=str,
+    #     default="all-MiniLM-L6-v2",
+    #     help="Name of the sentence transformer model to use for embeddings.",
+    # )
+    # parser.add_argument(
+    #     "--faiss_k",
+    #     type=int,
+    #     default=5,
+    #     help="Number of results to retrieve from FAISS.",
+    # )
 
 
 def check_pipeline_arguments(args):

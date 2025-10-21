@@ -8,7 +8,7 @@ DEFAULT_EMBEDDING_MODEL_URL = "http://localhost"
 QDRANT_VERSION = "1.13.6"
 TEI_VERSION = "1.7.0"
 # See https://github.com/huggingface/text-embeddings-inference?tab=readme-ov-file#docker-images
-TEI_DOCKER_CONTAINER_HARDWARE_ARCHITECTURE = ""  # e.g. "hopper" for H100 GPU, "turing" for T4 GPU, "cpu" for CPU (not recommended). Default is "" which means Ampere 80 architecture (A100, A30 etc. GPUs).
+TEI_DOCKER_CONTAINER_HARDWARE_ARCHITECTURE = "cpu"  # e.g. "hopper" for H100 GPU, "turing" for T4 GPU, "cpu" for CPU (not recommended). Default is "" which means Ampere 80 architecture (A100, A30 etc. GPUs).
 TGI_VERSION = "2.2.0"
 DEFAULT_RETRIEVER_PORT = 5100
 DEFAULT_RETRIEVER_RERANKER_ENGINE = "gpt-4o-mini"
@@ -24,7 +24,7 @@ DEFAULT_REDIS_PORT = 6379
 DEFAULT_DISTILLED_MODEL_PORT = 5002  # 5002 is reserved for local models
 
 CHATBOT_DEFAULT_CONFIG = {
-    "engine": "gpt-4o",
+    "engine": "gpt-4o-mini",
     "do_refine": False,
     "corpus_id": DEFAULT_VECTORDB_COLLECTION_NAME,
     "retriever_endpoint": "https://search.genie.stanford.edu/" + DEFAULT_VECTORDB_COLLECTION_NAME,
@@ -33,4 +33,5 @@ CHATBOT_DEFAULT_CONFIG = {
     "query_post_reranking_num": 3,
     "claim_pre_reranking_num": 10,
     "claim_post_reranking_num": 2,
+    "save_dialogue_to_db": False,
 }

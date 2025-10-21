@@ -1,0 +1,20 @@
+[
+  {
+    "name": "audio",
+    "index_path": "segment_indeces/audio.faiss",
+    "metadata_path": "segment_indeces/audio.parquet",
+    "description": "Embedding index over audio-transcribed segments."
+  },
+  {
+    "name": "gpt",
+    "index_path": "segment_indeces/gpt.faiss",
+    "metadata_path": "segment_indeces/gpt.parquet",
+    "description": "Embedding index over GPT-generated segments."
+  },
+  {
+    "name": "texttiling",
+    "index_path": "segment_indeces/texttiling.faiss",
+    "metadata_path": "segment_indeces/texttiling.parquet",
+    "description": "Embedding index over TextTiling-based segments."
+  }
+]

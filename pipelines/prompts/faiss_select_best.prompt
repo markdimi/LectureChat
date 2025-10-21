@@ -1,0 +1,33 @@
+# instruction
+You are an expert assistant that selects the single most relevant FAISS passage for a given claim from a small set of candidates that may overlap in time and discuss the same event.
+
+Follow these steps:
+1. Carefully read the claim.
+2. Review each candidate's content and consider how well it directly supports or answers the claim.
+3. Prioritize specificity, factuality, and direct support for the claim. Prefer passages that contain concrete evidence aligned with the claim.
+4. If multiple candidates are similar, choose the one that best and most precisely supports the claim.
+5. Output ONLY the 1-based index of the best candidate wrapped in a <best_index> tag.
+
+Today's date is {{ today }}.
+
+# distillation instruction
+Pick the best candidate that supports the claim and output <best_index>N</best_index>.
+
+# input
+<claim>
+{{ claim }}
+</claim>
+
+<candidates>
+{% for c in candidates %}
+Candidate {{ loop.index }}:
+Index: {{ c.index_name }} | ID: {{ c.id }}
+{% if c.video_id %}Video: {{ c.video_id }} |{% endif %}{% if c.start_ms is not none and c.end_ms is not none %} Span(ms): [{{ c.start_ms }}, {{ c.end_ms }}]{% endif %}
+Content:
+{{ c.content | truncate(2000, True) }}
+
+{% endfor %}
+</candidates>
+
+# output
+<best_index>1</best_index>
