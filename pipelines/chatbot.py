@@ -177,6 +177,15 @@ async def refine_stage(state):
 
 @chain
 async def append_faiss_answers(state):
+    # Check if search is needed - respect the same decision as Wikipedia
+    # If no search_query AND no llm_claims, then search was deemed unnecessary
+    if not state.current_turn.search_query and not state.current_turn.llm_claims:
+        logger.info("No FAISS search needed (following Wikipedia search decision)")
+        state.current_turn.faiss_answer = None
+        state.current_turn.faiss_references = []
+        state.current_turn.faiss_json_results = []
+        return
+    
     # Prefer querying FAISS with LLM-generated claims; fallback to user query if no claims
     claims = state.current_turn.llm_claims or []
     queries = claims if len(claims) > 0 else [state.current_turn.user_utterance]

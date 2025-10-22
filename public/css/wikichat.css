@@ -1,3 +1,9 @@
+/* LectureChat - remove the name of the corpus below the logo */
+
+.css-ovz3ww {
+    display: none !important;
+}
+
 /* Hide the logo at the top left of the page */
 img[alt="logo"] {
     visibility: hidden;
@@ -23,13 +29,14 @@ p.MuiTypography-root.MuiTypography-body1.css-i212uf {
     text-align: center;
 }
 
+
 /* Hide the side bar */
 div.MuiBox-root.css-kjafn5 {
     visibility: hidden;
 }
 
 /* Improve the starter icons */
-div.css-ptht6r{
+div.css-ptht6r {
     flex-direction: row;
     align-items: center;
 }
@@ -42,3 +49,24 @@ img[src$="/avatars/Steps"] {
     display: none;
 }
 
+/* sidepanel issues with long text */
+/* The parent container */
+.MuiBox-root.css-lrlsdz {
+    /* if this Box sits inside a flex row, this prevents overflow */
+    min-width: 0;
+    max-width: 100%;
+}
+
+/* Wrap long text/URLs inside this Box only */
+.MuiBox-root.css-lrlsdz .markdown-body,
+.MuiBox-root.css-lrlsdz .markdown-body li,
+.MuiBox-root.css-lrlsdz .markdown-body a {
+    overflow-wrap: anywhere;
+    /* modern & robust */
+    word-break: break-word;
+    /* fallback */
+    white-space: normal;
+    /* ensure wrapping is allowed */
+    hyphens: auto;
+    /* nicer hyphenation; add lang="de" for German */
+}

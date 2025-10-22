@@ -133,8 +133,11 @@ class DialogueState(BaseModel):
         for t in self.turns[:-1][-num_turns:]:
             if t.user_utterance:
                 history += "User: " + t.user_utterance + "\n"
+            # Include both Wikipedia and Lecture answers with clear labels
             if t.agent_utterance:
-                history += "Chatbot: " + t.agent_utterance + "\n"
+                history += "Assistant (Wikipedia): " + t.agent_utterance + "\n"
+            if t.faiss_answer:
+                history += "Assistant (Lectures): " + t.faiss_answer + "\n"
         history += (
             "User: " + self.current_turn.user_utterance
         )  # current turn's user utterance

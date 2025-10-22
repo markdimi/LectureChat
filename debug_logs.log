@@ -1981,3 +1981,177 @@ The field of AI also explores different types of intelligence, such as systems t
 2025-10-21 09:26:23 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia + University Lectures'
 2025-10-21 12:16:14 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia + University Lectures'
 2025-10-21 18:39:16 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia + University Lectures'
+2025-10-21 21:18:42 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia + University Lectures'
+2025-10-21 21:18:57 | INFO | pipelines.chatbot | Search queries: [
+  "A* Algorithm explanation",
+  "A* Algorithm details",
+  "A* Algorithm in computer science"
+]
+2025-10-21 21:30:09 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia + University Lectures'
+2025-10-21 21:41:03 | INFO | pipelines.chatbot | No search needed.
+2025-10-21 21:41:22 | INFO | pipelines.chatbot | No search needed.
+2025-10-21 21:41:49 | INFO | pipelines.chatbot | Search queries: [
+  "A* Algorithm explanation",
+  "A* Algorithm in computer science"
+]
+2025-10-21 21:44:18 | DEBUG | tasks.main | Redis server is already running.
+2025-10-21 21:44:18 | DEBUG | tasks.main | Loaded API key named OPENAI_API_KEY
+2025-10-21 21:44:28 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia + University Lectures'
+2025-10-21 21:44:30 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia + University Lectures'
+2025-10-21 21:44:49 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 21:44:55 | INFO | pipelines.chatbot | Search queries: [
+  "What is Artificial Intelligence?",
+  "Definition of Artificial Intelligence",
+  "Types of Artificial Intelligence"
+]
+2025-10-21 21:46:48 | DEBUG | tasks.main | Redis server is already running.
+2025-10-21 21:46:48 | DEBUG | tasks.main | Loaded API key named OPENAI_API_KEY
+2025-10-21 21:46:58 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 21:46:59 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia + University Lectures'
+2025-10-21 21:47:27 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 21:47:41 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 21:50:05 | DEBUG | tasks.main | Redis server is already running.
+2025-10-21 21:50:05 | DEBUG | tasks.main | Loaded API key named OPENAI_API_KEY
+2025-10-21 21:50:16 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 21:50:16 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 21:50:25 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 21:52:58 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 21:53:04 | DEBUG | tasks.main | Redis server is already running.
+2025-10-21 21:53:04 | DEBUG | tasks.main | Loaded API key named OPENAI_API_KEY
+2025-10-21 21:53:14 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 21:53:15 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 21:53:22 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 21:53:31 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 22:01:34 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 22:01:41 | INFO | pipelines.chatbot | Search queries: [
+  "ethical considerations of AI",
+  "AI ethics"
+]
+2025-10-21 22:03:36 | INFO | pipelines.chatbot | Search queries: [
+  "similarities and differences in ethical considerations of AI from Wikipedia and AI/CS Lectures"
+]
+2025-10-21 22:04:47 | INFO | pipelines.chatbot | Search queries: [
+  "ethical considerations in AI that may be missing from discussions"
+]
+2025-10-21 22:05:31 | INFO | pipelines.chatbot | Search queries: [
+  "AI-enabled misinformation",
+  "impact of AI on misinformation",
+  "AI and fake news"
+]
+2025-10-21 22:08:21 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 22:14:36 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 22:14:43 | DEBUG | tasks.main | Redis server is already running.
+2025-10-21 22:14:43 | DEBUG | tasks.main | Loaded API key named OPENAI_API_KEY
+2025-10-21 22:14:52 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 22:15:12 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 22:20:42 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 22:20:47 | DEBUG | tasks.main | Redis server is already running.
+2025-10-21 22:20:47 | DEBUG | tasks.main | Loaded API key named OPENAI_API_KEY
+2025-10-21 22:21:01 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 22:21:05 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 22:26:34 | INFO | pipelines.chatbot | Search queries: [
+  "ethical considerations of AI",
+  "AI ethics"
+]
+2025-10-21 22:29:56 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 22:37:57 | DEBUG | tasks.main | Redis server is already running.
+2025-10-21 22:37:57 | DEBUG | tasks.main | Loaded API key named OPENAI_API_KEY
+2025-10-21 22:38:10 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 22:38:14 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 22:38:27 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 22:41:54 | DEBUG | tasks.main | Redis server is already running.
+2025-10-21 22:41:54 | DEBUG | tasks.main | Loaded API key named OPENAI_API_KEY
+2025-10-21 22:42:08 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 22:42:09 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 22:42:11 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 22:42:50 | INFO | pipelines.chatbot | Search queries: [
+  "ethical considerations of AI",
+  "AI ethics"
+]
+2025-10-21 22:49:14 | DEBUG | tasks.main | Redis server is already running.
+2025-10-21 22:49:14 | DEBUG | tasks.main | Loaded API key named OPENAI_API_KEY
+2025-10-21 22:49:26 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 22:49:37 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 22:49:42 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 22:49:45 | INFO | pipelines.chatbot | Search queries: [
+  "ethical considerations of AI",
+  "AI ethics"
+]
+2025-10-21 22:51:13 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 22:52:27 | INFO | pipelines.chatbot | Search queries: [
+  "ethical considerations of AI",
+  "AI ethics"
+]
+2025-10-21 22:53:53 | INFO | pipelines.chatbot | Search queries: [
+  "similarities in ethical considerations of AI",
+  "ethical issues not mentioned in AI discussions"
+]
+2025-10-21 22:54:34 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 22:55:06 | INFO | pipelines.chatbot | Search queries: [
+  "ethical considerations of AI",
+  "AI ethics"
+]
+2025-10-21 22:56:58 | INFO | pipelines.chatbot | Search queries: [
+  "differences between ethical considerations of AI in Wikipedia and lectures"
+]
+2025-10-21 22:58:28 | INFO | pipelines.chatbot | No search needed.
+2025-10-21 22:58:30 | INFO | pipelines.chatbot | No FAISS search needed (following Wikipedia search decision)
+2025-10-21 22:58:51 | INFO | pipelines.chatbot | No search needed.
+2025-10-21 22:58:53 | INFO | pipelines.chatbot | No FAISS search needed (following Wikipedia search decision)
+2025-10-21 22:59:02 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 22:59:03 | INFO | pipelines.chatbot | Search queries: [
+  "ethical considerations of AI",
+  "AI ethics"
+]
+2025-10-21 22:59:58 | INFO | pipelines.chatbot | Search queries: [
+  "missing ethical considerations in AI"
+]
+2025-10-21 23:00:50 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 23:00:51 | INFO | pipelines.chatbot | Search queries: [
+  "ethical considerations of AI",
+  "AI ethics"
+]
+2025-10-21 23:01:19 | INFO | pipelines.chatbot | Search queries: [
+  "similarities and differences in ethical considerations of AI from Wikipedia and Lectures"
+]
+2025-10-21 23:02:57 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 23:02:58 | INFO | pipelines.chatbot | Search queries: [
+  "ethical considerations of AI",
+  "AI ethics"
+]
+2025-10-21 23:05:22 | INFO | pipelines.chatbot | Search queries: [
+  "missing ethical considerations in AI",
+  "additional ethical issues in artificial intelligence"
+]
+2025-10-21 23:07:09 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 23:07:18 | INFO | pipelines.chatbot | Search queries: [
+  "ethical considerations of AI",
+  "AI ethics"
+]
+2025-10-21 23:07:52 | INFO | pipelines.chatbot | Search queries: [
+  "additional ethical considerations of AI",
+  "ethical implications of AI not mentioned"
+]
+2025-10-21 23:09:48 | INFO | pipelines.chatbot | Search queries: [
+  "ethical considerations of deep fakes",
+  "impact of deep fakes on society",
+  "deep fakes misinformation"
+]
+2025-10-21 23:11:16 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 23:11:52 | INFO | pipelines.chatbot | Search queries: [
+  "A* algorithm explanation",
+  "A* algorithm details",
+  "A* search algorithm"
+]
+2025-10-21 23:14:24 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 23:14:41 | INFO | pipelines.chatbot | Search queries: [
+  "US president in 1769"
+]
+2025-10-21 23:15:31 | INFO | pipelines.chatbot | Search queries: [
+  "President of France in 1769"
+]
+2025-10-21 23:17:08 | DEBUG | backend_server.py | Using corpus with name 'Wikipedia in 25 Languages'
+2025-10-21 23:17:34 | INFO | pipelines.chatbot | Search queries: [
+  "information retrieval definition",
+  "information retrieval techniques"
+]
