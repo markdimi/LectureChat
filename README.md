@@ -1,6 +1,10 @@
 <h1 align="center">LectureChat</h1>
-<p align="center">Grounded answers from Wikipedia and your lecture collections.</p>
+<p align="center">LectureChat provides a conversational AI system by integrating multilingual university lecture transcripts alongside Wikipedia content into a typical LLM chat experience. We frame this as a proof-of-concept for video grounded QA. Our demo showcases a dual retrieval architecture that combines structured encyclopedic knowledge with academic lecture material, leveraging multiple segmentation strategies and cross-index reconciliation to improve retrieval quality. The system maintains separate citation spaces for Wikipedia (numeric) and lectures (alphabetic) and preserves temporal provenance for direct video navigation. We present the overall architecture, interaction flow, implementation details, and a reproducibility plan.</p>
 
+**Demonstration paper at ECIR 2026** — [Paper](https://doi.org/10.1007/978-3-032-21321-1_25) · [Springer](https://link.springer.com/chapter/10.1007/978-3-032-21321-1_25)
+
+> Dimitsas, M., Leidner, J. L. *LectureChat: Hybrid RAG over Wikipedia
+> and Multilingual Lecture Videos.* ECIR 2026, 172–178.
 
 # Table of Contents
 - [Introduction](#introduction)
@@ -25,6 +29,7 @@
 - [Other Commands](#other-commands)
   - [Run a Distilled Model for Lower Latency and Cost](#run-a-distilled-model-for-lower-latency-and-cost)
   - [Simulate Conversations](#simulate-conversations)
+- [Citation](#citation)
 - [License](#license)
 
 
@@ -332,6 +337,44 @@ You can simulate dialogues for evaluation:
 inv simulate-users --num-dialogues 1 --num-turns 2 --simulation-mode passage --language en --subset head
 ```
 Results will be saved in `benchmark/simulated_dialogues/`.
+
+
+# Citation
+
+Dimitsas, M., Leidner, J. L. (2026). *LectureChat: Hybrid RAG over Wikipedia
+and Multilingual Lecture Videos.* In Advances in Information Retrieval,
+pp. 172–178. Springer Nature Switzerland.
+[DOI](https://doi.org/10.1007/978-3-032-21321-1_25)
+
+<details>
+<summary>BibTeX</summary>
+
+```bibtex
+@InProceedings{10.1007/978-3-032-21321-1_25,
+author="Dimitsas, Markos
+and Leidner, Jochen L.",
+editor="Campos, Ricardo
+and Jatowt, Adam
+and Lan, Yanyan
+and Aliannejadi, Mohammad
+and Bauer, Christine
+and MacAvaney, Sean
+and Anand, Avishek
+and Ren, Zhaochun
+and Verberne, Suzan
+and Bai, Nan
+and Mansoury, Masoud",
+title="LectureChat: Hybrid RAG over Wikipedia and Multilingual Lecture Videos",
+booktitle="Advances in Information Retrieval",
+year="2026",
+publisher="Springer Nature Switzerland",
+address="Cham",
+pages="172--178",
+abstract="LectureChat provides a conversational AI system by integrating multilingual university lecture transcripts alongside Wikipedia content into a typical LLM chat experience. We frame this as a proof-of-concept for video grounded QA. Our demo showcases a dual retrieval architecture that combines structured encyclopedic knowledge with academic lecture material, leveraging multiple segmentation strategies and cross-index reconciliation to improve retrieval quality. The system maintains separate citation spaces for Wikipedia (numeric) and lectures (alphabetic) and preserves temporal provenance for direct video navigation. We present the overall architecture, interaction flow, implementation details, and a reproducibility plan.",
+isbn="978-3-032-21321-1"
+}
+```
+</details>
 
 
 # License
